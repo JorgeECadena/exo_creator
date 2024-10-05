@@ -1,0 +1,60 @@
+/* Home.css */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  background-color: #4b5a62;
+  color: #d3c9b6;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #2e2d2d;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  background-color: #5a52a4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.section {
+  flex: 1;
+  padding: 40px;
+}
+
+.section .info-box {
+  border: 2px solid purple;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.section button {
+  margin: 20px 0;
+  padding: 10px 15px;
+  background-color: #2e2d2d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.footer {
+  background-color: #2e2d2d;
+  color: #9a9a9a;
+  padding: 20px;
+  text-align: center;
+}
