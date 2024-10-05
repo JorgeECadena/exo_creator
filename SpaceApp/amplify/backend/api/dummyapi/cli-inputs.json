@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/dummy": {
+      "name": "/dummy",
+      "lambdaFunction": "dummy",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

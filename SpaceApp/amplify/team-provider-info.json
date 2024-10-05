@@ -10,6 +10,17 @@
       "StackName": "amplify-spaceapp-dev-f5e86",
       "StackId": "arn:aws:cloudformation:us-east-2:762233726652:stack/amplify-spaceapp-dev-f5e86/0ab67210-8361-11ef-9274-06e116e4b6f5",
       "AmplifyAppId": "d2l50toynd2ul2"
+    },
+    "categories": {
+      "function": {
+        "dummy": {
+          "deploymentBucketName": "amplify-spaceapp-dev-f5e86-deployment",
+          "s3Key": "amplify-builds/dummy-39482b3033423578417a-build.zip"
+        }
+      },
+      "api": {
+        "dummyapi": {}
+      }
     }
   }
 }

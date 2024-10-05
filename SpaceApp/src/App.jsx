@@ -1,6 +1,24 @@
 // /src/components/Home.js
 import React from 'react';
 import './App.css';
+import { get } from "aws-amplify/api";
+
+const API = 'dummyapi';
+const path = '/dummy';
+
+async function getMessage() {
+  try {
+    const restOperation = get({
+      apiName: API,
+      path: path,
+      });
+
+      const { body } = await restOperation.response;
+      const message = await body.json();
+  } catch(e) {
+    console.log('Request wasnt successful: ', e);
+  }
+}
 
 const Home = () => {
   return (
@@ -8,7 +26,7 @@ const Home = () => {
       <header className="header">
         <h1>ExoCreator</h1>
         <div>
-          <button>SignIn</button>
+          <button onClick={() => getMessage()}>SignIn</button>
           <button>SignUp</button>
         </div>
       </header>
