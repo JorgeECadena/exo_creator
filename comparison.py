@@ -17,9 +17,9 @@ def similarity(df, values):
 
     # min distance
     mostCompatible = df['resultDistance'].idxmin()
-    exoplanet = df.iloc[mostCompatible]['pl_name']
+    exoplanetRow = df.iloc[mostCompatible]
 
-    return exoplanet
+    return exoplanetRow
 
 compatible_planet = similarity(df, values)
 
