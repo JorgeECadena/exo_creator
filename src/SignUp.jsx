@@ -1,5 +1,6 @@
 import { React, useState, setState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { post, get } from 'aws-amplify/api';
 import './SignUp.css';
 
 const SignUp = () => {
@@ -16,19 +17,56 @@ const SignUp = () => {
         navigate('/');
     };
 
-    const submitForm = (e) => {
-        e.preventDefault();
-
+    /*async function sendData(data) {
         if(password !== passwordConfirmation) {
-            console.log("barbo");
             alert("Passwords do not match!");
             return;
         }
+
+        const apiName = "api";
+        const path = '/barbo';
+        const myInit = {
+            body: data,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+
+        try {
+            const response = await post(apiName, path, myInit);
+            console.log("POST was successful: ", response);
+        } catch (error) {
+            console.log("Error while POST: ", error);
+        }
+
+    };*/
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('https://btfccxhaig.execute-api.us-east-2.amazonaws.com/dev/barbo/userData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify({
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: password,
+            }),
+        });
+        const data = await response.json();
+        console.log(data);
+       } catch (error) {
+           console.error('Error on POST:', error);
+       } 
     };
 
     return (
 
-        <form onSubmit={submitForm} className='SignUp'>
+        <form onSubmit={handleSubmit} className='SignUp'>
             <h1>SignUp</h1>
 
             <p>First name:</p>
@@ -79,7 +117,6 @@ const SignUp = () => {
             <a href="#">Already have an account? Sign in here.</a>
 
             <button onClick={() => goToHome()}>Go home</button>
-            <button onClick={submitForm}>Dummy</button>
             <button type="submit">SignUp</button>
         </form>
 

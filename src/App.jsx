@@ -1,36 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { get } from 'aws-amplify/api';
-
-const API = 'nodeApi';
-const path = '/node';
+// /src/components/Home.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import './App.css'; // Import the CSS file
+import Home from './Home';
+import SignUp from './SignUp';
 
 const App = () => {
-
-  async function getMessage() {
-    try {
-      const restOp = get({
-        apiName: API,
-        path: path,
-      });
-
-      const { body } = await restOp.response;
-      const message = await body.json();
-
-      console.log("GET operation successful: ", message);
-    } catch(e) {
-      console.log(e);
-    }
-  }
-
   return (
-    <div className="App">
-      <h1>YA FUNCIONA POR FAVOR</h1>
-      <button onClick={ () => getMessage()}>Test</button>
-    </div>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/SignUp" element={<SignUp />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;

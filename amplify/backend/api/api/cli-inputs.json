@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/barbo/{userData}": {
+      "name": "/barbo/{userData}",
+      "lambdaFunction": "apifunc",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

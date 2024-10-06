@@ -1,4 +1,4 @@
-
+import db from '../config/firebase';
 
 /**
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
