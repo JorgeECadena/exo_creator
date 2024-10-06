@@ -8,7 +8,7 @@ html, body {
 }
 
 .container {
-  background-color: #1D3557; /* Azul oscuro espacial para el fondo principal */
+  background-color: black; /* Azul oscuro espacial para el fondo principal */
   color: #F1FAEE; /* Blanco casi puro para el texto */
   height: 100vh; /* Set height to fill the viewport */
   display: flex;
@@ -17,7 +17,7 @@ html, body {
 }
 
 .header {
-  background-color: #221a4b; /* Azul celeste claro para un header amigable */
+  background-color: #24272b; /* Azul celeste claro para un header amigable */
   color: #F1FAEE; /* Texto blanco para contraste */
   padding: 15px 20px;
   display: flex;
@@ -48,12 +48,12 @@ html, body {
 }
 
 .header button.button1 {
-  background-color: #b10076; /* Naranja suave */
+  background-color: black; /* Naranja suave */
   margin-right: 20px; /* Reduced margin to fit buttons within the header */
 }
 
 .header button.button2 {
-  background-color: #71004b; /* Rojo coral */
+  background-color: black; /* Rojo coral */
   margin-right: 30px;
 }
 
@@ -76,7 +76,7 @@ html, body {
 .section button {
   margin: 20px 0;
   padding: 50px 70px; /* Increased padding for a bigger button */
-  background-color: #b10076; /* Amarillo vibrante para botones destacados */
+  background-color: #011430; /* Amarillo vibrante para botones destacados */
   color: white; /* Texto azul oscuro para contraste */
   border: none;
   border-radius: 5px;
@@ -89,7 +89,7 @@ html, body {
 }
 
 .footer {
-  background-color: #221a4b; /* Azul celeste claro */
+  background-color: #24272b; /* Azul celeste claro */
   color: #F1FAEE; /* Texto blanco */
   padding: 20px;
   text-align: center;
