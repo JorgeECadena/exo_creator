@@ -14,7 +14,7 @@ def handler(event, context):
     values = body.get('values', [])
     
     #values = [radio_planeta, masa_planeta, temperatura, masa_sol, distancia]
-    values[4] = values[2] + 273.15
+    values[2] = values[2] + 273.15
     planeta_parecido = similarity(df, values)
     message = {}
     message['planet_name'] = planeta_parecido['pl_name']
