@@ -1,7 +1,7 @@
 // /src/components/Home.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './App.css'; // Import the CSS file
+import './Home.css'; // Import the CSS file
 
 const Home = () => {
   const navigate = useNavigate();
@@ -27,16 +27,22 @@ const Home = () => {
         </div>
       </header>
 
-      <section className="section">
+      <section className="card">
         <h2>What’s ExoCreate?</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum nulla nec nisi pellentesque tempor...</p>
 
+      </section>
+
+      <section className="card">
         <h2>How to create?</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum nulla nec nisi pellentesque tempor...</p>
         <button>Create now!</button>
+      </section>
 
-        <h2>What’s our purpose?</h2>
+      <section className="card">
+        <h2>More information</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum nulla nec nisi pellentesque tempor...</p>
+
       </section>
 
       <footer className="footer">
