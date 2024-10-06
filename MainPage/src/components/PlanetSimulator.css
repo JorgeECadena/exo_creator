@@ -8,9 +8,10 @@ body {
 .container {
     display: flex; /* Use flexbox for layout */
     height: 100%; /* Full viewport height */
-    width: 120vw; /* Full viewport width */
+    width: 100vw; /* Adjust to full viewport width */
     position: relative; /* Position relative for child elements */
 }
+
 
 /* Style for the menu on the left */
 .menu {
@@ -34,4 +35,17 @@ body {
 .canvas {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
+}
+
+.TextInputs {
+    width: 300px; /* Set a fixed width for the TextInputs */
+    background-color: #333; /* Background color for the TextInputs */
+    color: white; /* Text color */
+    padding: 20px; /* Padding inside the TextInputs */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+    position: absolute; /* Position absolute to place it on the right */
+    right: 0; /* Align to the right */
+    top: 0; /* Align to the top */
+    height: 100vh; /* Full viewport height */
+    z-index: 10; /* Ensure it is above the canvas */
 }

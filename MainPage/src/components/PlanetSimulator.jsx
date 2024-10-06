@@ -180,7 +180,15 @@ const PlanetSimulator = () => {
           />
         </label>
         <br />
-        <label>
+        <button 
+          className="changePage"
+          onClick={() => navigate('/Planets', { state: { dynamicPlanetProps: { texturePath, cloudPath, temperature, cloudOpacity, planetSize } } })}>
+          Change Page
+        </button>
+      </div>
+
+      <div className="TextInputs">
+      <label>
           Name your planet:
           <input type="text" class="inputBox"/>
         </label>
@@ -205,12 +213,11 @@ const PlanetSimulator = () => {
           <input type="text" class="inputBox"/>
         </label>
         <br />
-        <button 
-          className="changePage"
-          onClick={() => navigate('/Planets', { state: { dynamicPlanetProps: { texturePath, cloudPath, temperature, cloudOpacity, planetSize } } })}>
-          Change Page
-        </button>
-      </div>
+        <button
+        className="submitText"
+        onClick={() => alert("Your planet has been submitted!")}
+        >Get your story!</button>
+        </div>
       
       <div className="simulator-container"> {/* Right simulator container */}
         <Canvas className="canvas" camera={{ position: [0, 0, 5], fov: 60 }}>
