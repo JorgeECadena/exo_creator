@@ -10,9 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "aws-amplify": "^6.6.3",
+    "aws-amplify": "^6.6.4",
+    "aws-amplify-react": "^5.1.43",
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
+    "firebase": "^10.14.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

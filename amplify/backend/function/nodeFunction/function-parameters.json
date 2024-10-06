@@ -1,3 +1,29 @@
 {
-  "lambdaLayers": []
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "firebaseApiKey",
+      "environmentVariableName": "FIREBASE_API_KEY"
+    },
+    {
+      "cloudFormationParameterName": "firebaseAuthDomain",
+      "environmentVariableName": "FIREBASE_AUTH_DOMAIN"
+    },
+    {
+      "cloudFormationParameterName": "firebaseProjectId",
+      "environmentVariableName": "FIREBASE_PROJECT_ID"
+    },
+    {
+      "cloudFormationParameterName": "firebaseStorageBucket",
+      "environmentVariableName": "FIREBASE_STORAGE_BUCKET"
+    },
+    {
+      "cloudFormationParameterName": "firebaseMessagingSenderId",
+      "environmentVariableName": "FIREBASE_MESSAGING_SENDER_ID"
+    },
+    {
+      "cloudFormationParameterName": "firebaseAppId",
+      "environmentVariableName": "FIREBASE_APP_ID"
+    }
+  ]
 }

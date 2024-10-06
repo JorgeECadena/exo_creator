@@ -15,11 +15,22 @@
       "function": {
         "nodeFunction": {
           "deploymentBucketName": "amplify-exocreator-dev-ce607-deployment",
-          "s3Key": "amplify-builds/nodeFunction-344a686a56694b577149-build.zip"
+          "s3Key": "amplify-builds/nodeFunction-4e615548636470787472-build.zip",
+          "firebaseApiKey": "AIzaSyB9zFY46XABosS6bflBeJOhk7XICer5Zoc",
+          "firebaseAuthDomain": "exo-creator.firebaseapp.com",
+          "firebaseProjectId": "exo-creator",
+          "firebaseStorageBucket": "exo-creator.appspot.com",
+          "firebaseMessagingSenderId": "776994768040",
+          "firebaseAppId": "1:776994768040:web:a6f9f2561c282ff7392e9d"
+        },
+        "apifunc": {
+          "deploymentBucketName": "amplify-exocreator-dev-ce607-deployment",
+          "s3Key": "amplify-builds/apifunc-5a334179754d326e7968-build.zip"
         }
       },
       "api": {
-        "nodeApi": {}
+        "nodeApi": {},
+        "api": {}
       }
     }
   }

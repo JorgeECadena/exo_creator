@@ -15,6 +15,24 @@
     },
     "s3Key": {
       "Type": "String"
+    },
+    "firebaseApiKey": {
+      "Type": "String"
+    },
+    "firebaseAuthDomain": {
+      "Type": "String"
+    },
+    "firebaseProjectId": {
+      "Type": "String"
+    },
+    "firebaseStorageBucket": {
+      "Type": "String"
+    },
+    "firebaseMessagingSenderId": {
+      "Type": "String"
+    },
+    "firebaseAppId": {
+      "Type": "String"
     }
   },
   "Conditions": {
@@ -69,6 +87,24 @@
             },
             "REGION": {
               "Ref": "AWS::Region"
+            },
+            "FIREBASE_API_KEY": {
+              "Ref": "firebaseApiKey"
+            },
+            "FIREBASE_AUTH_DOMAIN": {
+              "Ref": "firebaseAuthDomain"
+            },
+            "FIREBASE_PROJECT_ID": {
+              "Ref": "firebaseProjectId"
+            },
+            "FIREBASE_STORAGE_BUCKET": {
+              "Ref": "firebaseStorageBucket"
+            },
+            "FIREBASE_MESSAGING_SENDER_ID": {
+              "Ref": "firebaseMessagingSenderId"
+            },
+            "FIREBASE_APP_ID": {
+              "Ref": "firebaseAppId"
             }
           }
         },
