@@ -1,0 +1,58 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+/* Estilos de la tarjeta de sign-in */
+.sign-in-card {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
+  max-width: 400px;
+  width: 90%;
+  margin: 0 auto; /* Centra la tarjeta horizontalmente */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Encabezado de la tarjeta */
+.sign-in-card h2 {
+  margin-bottom: 20px;
+}
+
+/* Formulario dentro de la tarjeta */
+.sign-in-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%; /* Asegura que el formulario ocupe todo el ancho de la tarjeta */
+}
+
+/* Estilo de los inputs */
+.sign-in-card input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  width: 100%; /* Asegura que el input ocupe todo el ancho */
+}
+
+/* Estilo de los botones */
+.sign-in-card button {
+  padding: 10px;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-card button:hover {
+  background-color: #21a1f1;
+}
