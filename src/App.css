@@ -17,7 +17,7 @@ html, body {
 }
 
 .header {
-  background-color: #457B9D; /* Azul celeste claro para un header amigable */
+  background-color: #221a4b; /* Azul celeste claro para un header amigable */
   color: #F1FAEE; /* Texto blanco para contraste */
   padding: 15px 20px;
   display: flex;
@@ -48,12 +48,12 @@ html, body {
 }
 
 .header button.button1 {
-  background-color: #F4A261; /* Naranja suave */
+  background-color: #b10076; /* Naranja suave */
   margin-right: 20px; /* Reduced margin to fit buttons within the header */
 }
 
 .header button.button2 {
-  background-color: #E63946; /* Rojo coral */
+  background-color: #71004b; /* Rojo coral */
   margin-right: 30px;
 }
 
@@ -76,8 +76,8 @@ html, body {
 .section button {
   margin: 20px 0;
   padding: 50px 70px; /* Increased padding for a bigger button */
-  background-color: #FFBE0B; /* Amarillo vibrante para botones destacados */
-  color: #1D3557; /* Texto azul oscuro para contraste */
+  background-color: #b10076; /* Amarillo vibrante para botones destacados */
+  color: white; /* Texto azul oscuro para contraste */
   border: none;
   border-radius: 5px;
   display: block;
@@ -89,7 +89,7 @@ html, body {
 }
 
 .footer {
-  background-color: #457B9D; /* Azul celeste claro */
+  background-color: #221a4b; /* Azul celeste claro */
   color: #F1FAEE; /* Texto blanco */
   padding: 20px;
   text-align: center;
