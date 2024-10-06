@@ -1,17 +1,25 @@
 // /src/components/Home.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './App.css'; // Import the CSS file
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const goToSignUp = () => {
+    navigate('/SignUp');
+  };
+  
   return (
     <div className="container">
       <header className="header">
         <h1>ExoCreator</h1>
         <div>
-          <button class="transparent-button">Home</button>
-          <button class="transparent-button">About</button>
-          <button class="button1">SignIn</button>
-          <button class="button2">SignUp</button>
+          <button className="transparent-button">Create you EXO</button>
+          <button className="transparent-button">Lessons</button>
+
+          <button className="button1">SignIn</button>
+          <button onClick={() => goToSignUp()} className="button2">SignUp</button>
         </div>
       </header>
 
