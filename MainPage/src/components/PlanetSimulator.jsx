@@ -180,6 +180,31 @@ const PlanetSimulator = () => {
           />
         </label>
         <br />
+        <label>
+          Name your planet:
+          <input type="text" class="inputBox"/>
+        </label>
+        <br />
+        <label>
+          Name the civilization:
+          <input type="text" class="inputBox"/>
+        </label>
+        <br />
+        <label>
+          What did they used to do?
+          <input type="text" class="inputBox"/>
+        </label>
+        <br />
+        <label>
+          What happened to the planet?
+          <input type="text" class="inputBox"/>
+        </label>
+        <br />
+        <label>
+          What are the special features of the planet?
+          <input type="text" class="inputBox"/>
+        </label>
+        <br />
         <button 
           className="changePage"
           onClick={() => navigate('/Planets', { state: { dynamicPlanetProps: { texturePath, cloudPath, temperature, cloudOpacity, planetSize } } })}>

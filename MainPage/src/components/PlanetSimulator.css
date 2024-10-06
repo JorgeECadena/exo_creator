@@ -8,7 +8,7 @@ body {
 .container {
     display: flex; /* Use flexbox for layout */
     height: 100%; /* Full viewport height */
-    width: 100vw; /* Full viewport width */
+    width: 120vw; /* Full viewport width */
     position: relative; /* Position relative for child elements */
 }
 
