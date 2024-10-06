@@ -16,16 +16,16 @@ def get_float_input(prompt):
 
 distancia = get_float_input('Enter the distance of the planet to its star (in AU): ')
 masa_sol = get_float_input('Enter the mass of the star (in Suns): ')
-temperatura = get_float_input('Enter the equilibrium temperature of the planet (in °C): ')
+temperatura = get_float_input('Enter the equilibrium temperature of the planet (in °C): ') + 273.15
 masa_planeta = get_float_input('Enter the mass of the planet (in Earths): ')
 radio_planeta = get_float_input('Enter the radius of the planet (in Earths): ')
 values = [radio_planeta, masa_planeta, temperatura, masa_sol, distancia]
 
 planeta_parecido = similarity(df, values)
 print('The most similar planet is: ', planeta_parecido['pl_name'])
-print('Is it habitable? ', check_life(distancia, masa_sol, temperatura))
+print('Is it habitable? ', check_life(planeta_parecido['pl_orbsmax'], planeta_parecido['st_mass'], planeta_parecido['pl_eqt']))
 
-distanciaNave = Distancias(distancia)
+distanciaNave = Distancias(planeta_parecido["sy_dist"])
 print('The travel time with a Star Trek ship to the planet is: ', distanciaNave.starTrek(), 'years')
 print('The travel time with a Star Wars ship to the planet is: ', distanciaNave.starWars(), 'years')
 print('The travel time with a Space Odyssey ship to the planet is: ', distanciaNave.SpaceOdyssey(), 'years')
