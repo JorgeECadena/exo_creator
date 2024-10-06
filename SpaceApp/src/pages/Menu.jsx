@@ -13,10 +13,10 @@ function Menu() {
     };
 
     return (
-        <div className='page'>
+        <div className='page3'>
           <div className="card">
           <p>
-          Which lesson would you like to take?
+          <strong>Which lesson would you like to take? </strong>
     
             </p>
           <button className="Lesson 1" onClick={handleNext1}>Lesson1</button>

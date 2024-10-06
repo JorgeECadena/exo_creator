@@ -110,3 +110,14 @@
   text-align: center;
   min-width: 500px;
 } 
+
+.page3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-image: url('fondoMenu.jpg');
+  color: white;
+  font-family: Comic sans-serif;
+}
