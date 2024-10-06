@@ -1,0 +1,87 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+/* Contenedor del logo */
+.logo-container {
+  position: fixed;
+  width: 300px; /* Ajusta el tamaño del contenedor del logo */
+  height: 300px;
+  top: 150px; /* Ajusta para que el logo se superponga */
+  z-index: 2; /* Asegúrate de que el logo esté sobre la tarjeta */
+  margin-bottom: -60px; /* Espacio para superponer */
+}
+
+/* Estilos para el logo */
+.app-logo {
+  max-width: 100%; /* Ajusta el tamaño del logo */
+  max-height: 100%;
+}
+
+/* Estilos de la tarjeta de sign-in */
+.SignUp {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
+  max-width: 400px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1; /* Para que la tarjeta esté detrás del logo */
+  margin-top: 130px;
+  margin-right: 130px;
+}
+
+/* Reducir el margen de los textos (<p>) */
+.SignUp p {
+  margin: 20px 0; /* Ajusta el margen superior e inferior */
+  /* font-weight: bold; Opcional: hace que el texto sea más visible */
+  margin-bottom: 1px; /* Ajusta el margen inferior */
+}
+
+
+
+/* Encabezado de la tarjeta */
+.sign-in-card h2 {
+  margin-bottom: 20px;
+}
+
+/* Formulario dentro de la tarjeta */
+.sign-in-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%; /* Asegura que el formulario ocupe todo el ancho de la tarjeta */
+}
+
+/* Estilo de los inputs */
+.sign-in-card input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+}
+
+/* Estilo de los botones */
+.sign-in-card button {
+  padding: 8px;
+  background-color: #132324;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 40%;
+}
+
+.sign-in-card button:hover {
+  background-color: #1e3542;  
+}

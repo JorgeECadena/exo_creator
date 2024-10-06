@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-route
 import './App.css'; // Import the CSS file
 import Home from './Home';
 import SignUp from './SignUp';
+import SignIn from './SignIn';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/SignIn" element={<SignIn />} />
       </Routes>
     </Router>
   );

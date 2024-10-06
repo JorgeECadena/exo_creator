@@ -6,6 +6,10 @@ import './App.css'; // Import the CSS file
 const Home = () => {
   const navigate = useNavigate();
 
+  const goToSignIn = () => {
+    navigate('/SignIn');
+  };
+
   const goToSignUp = () => {
     navigate('/SignUp');
   };
@@ -18,7 +22,7 @@ const Home = () => {
           <button className="transparent-button">Create you EXO</button>
           <button className="transparent-button">Lessons</button>
 
-          <button className="button1">SignIn</button>
+          <button onClick={() => goToSignIn()} className="button1">SignIn</button>
           <button onClick={() => goToSignUp()} className="button2">SignUp</button>
         </div>
       </header>
