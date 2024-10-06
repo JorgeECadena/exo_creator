@@ -1,8 +1,1 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Our project was an interactive website where users could create their own exoplanets by adjusting various conditions. Based on their inputs, we compared the created exoplanet with NASA's exoplanet database, returning the closest real match. We then provided insights into the potential for life on that exoplanet using the concept of the "habitable zone," and calculated how long it would take to travel there from Earth using fictional spaceships. At the end, we offered educational lessons and quizzes to teach users about exoplanets and their significance. We believe this project is important because it educates users, especially children, on topics that are often overlooked in traditional schooling. The interactive and dynamic format engages their curiosity, making learning about exoplanets both fun and informative.
