@@ -4,7 +4,7 @@ import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 import { getFresnelMat } from '../shaders/getFresnelMap';  // Fresnel Shader for atmosphere
 
-const Planet = ({ texturePath, cloudPath }) => {
+const Planet = ({ texturePath, cloudPath, temperature, cloudOpacity, planetSize }) => {
   const planetRef = useRef();
 
   // Dynamic texture loading based on props
@@ -39,7 +39,7 @@ const Planet = ({ texturePath, cloudPath }) => {
 
   // Create the Fresnel material for atmosphere glow with reduced opacity
   const fresnelMaterial = getFresnelMat({
-    rimHex: 0x0088ff,
+    temperature: temperature, // Pass temperature to getFresnelMat
     facingHex: 0x000000,
     scale: 1.5,
     opacity: 0.2, // Reduced opacity for less invasive glow
@@ -50,40 +50,40 @@ const Planet = ({ texturePath, cloudPath }) => {
       {/* Render planet mesh only if the texture is loaded */}
       {planetTexture ? (
         <mesh>
-          <sphereGeometry args={[1, 10, 10]} /> {/* Adjusted for higher detail */}
+          <sphereGeometry args={[planetSize, 10, 10]} /> {/* Adjusted for higher detail */}
           <meshStandardMaterial map={planetTexture} />
         </mesh>
       ) : (
         <mesh>
-          <sphereGeometry args={[1, 10, 10]} />
+          <sphereGeometry args={[planetSize, 10, 10]} />
           <meshStandardMaterial color="gray" />
         </mesh>
       )}
 
       {/* Atmosphere Glow Mesh */}
       <mesh>
-        <sphereGeometry args={[1.05, 10, 10]} /> {/* Slightly larger for the atmosphere */}
+        <sphereGeometry args={[planetSize * 1.05, 10, 10]} /> {/* Slightly larger for the atmosphere */}
         <shaderMaterial attach="material" args={[fresnelMaterial]} />
       </mesh>
 
       {/* Render clouds mesh only if the texture is loaded */}
       {cloudTexture ? (
         <mesh>
-          <sphereGeometry args={[1.02, 10, 10]} /> {/* Slightly larger than planet */}
+          <sphereGeometry args={[planetSize * 1.02, 10, 10]} /> {/* Slightly larger than planet */}
           <meshStandardMaterial
             map={cloudTexture}
             transparent={true}
-            opacity={0.2} // Adjust opacity for cloud effect
+            opacity={cloudOpacity} // Adjust opacity for cloud effect
             flatShading={true} // Activate flat shading
           />
         </mesh>
       ) : (
         <mesh>
-          <sphereGeometry args={[1.02, 10, 10]} />
+          <sphereGeometry args={[planetSize * 1.02, 10, 10]} />
           <meshStandardMaterial
             color="white"
             transparent={true}
-            opacity={0.2}
+            opacity={cloudOpacity}
             flatShading={true} // Activate flat shading
           />
         </mesh>
@@ -94,11 +94,14 @@ const Planet = ({ texturePath, cloudPath }) => {
 
 import './PlanetSimulator.css';
 import { useNavigate } from 'react-router-dom';
+
 const PlanetSimulator = () => {
   // State to hold dynamic texture paths based on slider values
-  const navigate = useNavigate();;
+  const navigate = useNavigate();
   const [textureIndex, setTextureIndex] = useState(0);
-  const [cloudIndex, setCloudIndex] = useState(0);
+  const [temperature, setTemperature] = useState(0); // State for temperature
+  const [cloudOpacity, setCloudOpacity] = useState(0.5); // Default opacity
+  const [planetSize, setPlanetSize] = useState(1); // Default planet size
 
   // Define texture paths
   const textures = [
@@ -110,12 +113,19 @@ const PlanetSimulator = () => {
   const cloudTextures = [
     '/textures/clouds.png', // Update with actual paths
     '/textures/clouds.png',
-    '/textures/clouds.png', // Add more cloud textures as needed
   ];
 
   // Calculate current texture paths based on slider indices
   const texturePath = textures[textureIndex];
-  const cloudPath = cloudTextures[cloudIndex];
+  const cloudPath = cloudTextures[0]; // Use a fixed cloud texture
+
+  const handleCloudSliderChange = (event) => {
+    setCloudOpacity(event.target.value / 100); // Assuming slider value is between 0 and 100
+  };
+
+  const handleSizeSliderChange = (event) => {
+    setPlanetSize(event.target.value); // Assuming slider value is between 0.5 and 2
+  };
 
   return (
     <div className="container"> {/* Flex container for layout */}
@@ -133,18 +143,48 @@ const PlanetSimulator = () => {
           />
         </label>
         <br />
-        {/* Slider for cloud texture selection */}
+        {/* Slider for temperature */}
         <label>
-          Select Cloud Texture:
+          Select Temperature:
           <input
             type="range"
             min="0"
-            max={cloudTextures.length - 1}
-            value={cloudIndex}
-            onChange={(e) => setCloudIndex(Number(e.target.value))}
+            max="360"
+            value={temperature}
+            onChange={(e) => setTemperature(Number(e.target.value))}
           />
         </label>
-        <button class="changePage" onClick={() => window.location.href = '/Planets'}>Change Page</button>
+        <br />
+        {/* Slider for cloud opacity */}
+        <label>
+          Select Cloud Opacity:
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value={cloudOpacity * 100}
+            onChange={handleCloudSliderChange}
+          />
+        </label>
+        <br />
+        {/* Slider for planet size */}
+        <label>
+          Select Planet Size:
+          <input
+            type="range"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value={planetSize}
+            onChange={handleSizeSliderChange}
+          />
+        </label>
+        <br />
+        <button 
+          className="changePage"
+          onClick={() => navigate('/Planets', { state: { dynamicPlanetProps: { texturePath, cloudPath, temperature, cloudOpacity, planetSize } } })}>
+          Change Page
+        </button>
       </div>
       
       <div className="simulator-container"> {/* Right simulator container */}
@@ -153,7 +193,7 @@ const PlanetSimulator = () => {
           <directionalLight position={[5, 5, 5]} intensity={1} />
           
           {/* Low-poly Planet with atmosphere and clouds */}
-          <Planet texturePath={texturePath} cloudPath={cloudPath} />
+          <Planet texturePath={texturePath} cloudPath={cloudPath} temperature={temperature} cloudOpacity={cloudOpacity} planetSize={planetSize} />
 
           {/* Background starfield */}
           <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade />

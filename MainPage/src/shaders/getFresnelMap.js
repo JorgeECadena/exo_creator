@@ -1,11 +1,17 @@
 import * as THREE from 'three';
 
 function getFresnelMat({
-  rimHex = 0x0088ff, 
+  temperature = 0, // Add temperature parameter
   facingHex = 0x000000, 
   scale = 1.5, 
   opacity = 0.2
 } = {}) {
+  // Convert temperature to HSL color
+  const blue = new THREE.Color(0x0000ff);
+  const red = new THREE.Color(0xff0000);
+  const color = blue.clone().lerp(red, temperature / 360);
+  const rimHex = color.getHex(); 
+
   const uniforms = {
     color1: { value: new THREE.Color(rimHex) },
     color2: { value: new THREE.Color(facingHex) },
