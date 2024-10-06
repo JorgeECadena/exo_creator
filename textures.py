@@ -1,8 +1,5 @@
 from PIL import Image
 import numpy as np
-
-from PIL import Image
-import numpy as np
 import matplotlib.colors as mcolors
 
 
@@ -34,7 +31,7 @@ class TextureGenerator:
             (5.20, "#FFCC99"),  # Jupiter (Beige)
             (9.58, "#FFFF99"),  # Saturn (Pale Yellow)
             (19.2, "#66FFCC"),  # Uranus (Green-Blue)
-            (30.0, "#3366FF")  # Neptune (Blue)
+            (30.0, "#3366FF")   # Neptune (Blue)
         ]
 
         # If the distance is less than Mercury or greater than Neptune, adjust to boundary colors
@@ -54,6 +51,21 @@ class TextureGenerator:
                 rgb_end = mcolors.hex2color(color_end)
                 # Interpolate and return as RGB tuple
                 return tuple(np.array(rgb_start) * (1 - factor) + np.array(rgb_end) * factor)
+
+    @staticmethod
+    def calculate_water_level(distance):
+        """
+        Calculate water level based on distance.
+        When distance is 30, water level is 0.
+        When distance is 1, water level is 50.
+        """
+        if distance >= 30:
+            return 0
+        elif distance <= 1:
+            return 50
+        else:
+            # Linear interpolation between 0 (at distance 30) and 50 (at distance 1)
+            return 50 - (50 / 29) * (distance - 1)
 
     @staticmethod
     def generate_noise_pattern(width, height, scale=10, contrast=50):
@@ -104,25 +116,25 @@ class TextureGenerator:
         return img
 
     @staticmethod
-    def generate_exoplanet_texture(width=1000, height=500, distance=1.0, water_level=50, noise_scale=20,
-                                   noise_contrast=80, block_size=20):
+    def generate_exoplanet_texture(width=1000, height=500, distance=1.0, noise_scale=20, noise_contrast=80, block_size=20):
         """
         Generate an exoplanet texture with a grid-based water pattern and noise.
         - width: The width of the image.
         - height: The height of the image.
         - distance: Distance from the star in astronomical units (AU) that affects the base color.
-        - water_level: Controls the amount of water patches.
         - noise_scale: The scale of the noise pattern applied to the texture.
         - noise_contrast: The contrast of the noise pattern.
         - block_size: The size of each square block used for the water and clouds.
         """
+        # Calculate water level based on distance
+        water_level = TextureGenerator.calculate_water_level(distance)
+
         img = Image.new("RGB", (width, height))
         base_color = TextureGenerator.get_color_by_distance(distance)
         pixels = img.load()
 
         # Generate a noise pattern
-        noise_pattern = TextureGenerator.generate_noise_pattern(width, height, scale=noise_scale,
-                                                                contrast=noise_contrast)
+        noise_pattern = TextureGenerator.generate_noise_pattern(width, height, scale=noise_scale, contrast=noise_contrast)
 
         # Apply the noise pattern to the base color to create a texture
         for x in range(width):
@@ -201,16 +213,17 @@ class TextureGenerator:
 
     @staticmethod
     def get_assets(distance):
-        planet_texture = TextureGenerator.generate_exoplanet_texture(width = 1000, height = 500, distance = distance, water_level = 40, noise_scale = 20,
-        noise_contrast = 40, block_size = 40)
+        planet_texture = TextureGenerator.generate_exoplanet_texture(width=1000, height=500, distance=distance,
+                                                                     noise_scale=20, block_size=30)
         water_mask = TextureGenerator.generate_water_mask(planet_texture)
         cloud_image = TextureGenerator.generate_minecraft_style_clouds(width=1000, height=500, cloud_level=60,
                                                                        block_size=40)
 
+        planet_texture.save('planet_texture.png')
+        water_mask.save('water_mask.png')
+        cloud_image.save('cloud_image.png')
         response = {'planet_texture': planet_texture, 'water_mask': water_mask, 'cloud_image': cloud_image}
         return response
 
-planet_texture, water_mask, cloud_image = TextureGenerator.get_assets(15.0)
-planet_texture.save('planet_texture.png')
-water_mask.save('water_mask.png')
-cloud_image.save('cloud_image.png')
+planet_texture, water_mask, cloud_image = TextureGenerator.get_assets(5.0)
+
