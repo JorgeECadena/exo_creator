@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useScore } from '../Score';
 
-function Quizz2() {
+function Quizz4() {
     const navigate = useNavigate();
     const { score, incrementScore } = useScore();
     const [selectedAnswer, setSelectedAnswer] = useState('');
@@ -30,15 +30,15 @@ function Quizz2() {
       };
   
     const handleNext = () => {
-        navigate('/quizz3');
+        navigate('/Aquizz5');
     };
 
   return (
     <div className='page2'>
       <div className="card2">
-      <h1>Question 2</h1>
+      <h1>Question 4</h1>
       <p> <strong>
-      Which of the following planets are gas giants?
+      What makes a super-Earth different from planets in our solar system?
         </strong>
       </p>
       
@@ -51,7 +51,7 @@ function Quizz2() {
             onChange={handleAnswerChange}
             disabled={isSubmitted} 
           />
-          a) Planets with solid surfaces
+          a) They are more massive than ice giants like Neptune
           </label>
         </div>
         <div>
@@ -63,7 +63,7 @@ function Quizz2() {
             onChange={handleAnswerChange} 
             disabled={isSubmitted} 
           />
-          b) Planets mostly composed of helium and hydrogen
+          b) They are more massive than Earth but lighter than ice giants
           </label>
         </div>
         <div>
@@ -75,7 +75,7 @@ function Quizz2() {
             onChange={handleAnswerChange} 
             disabled={isSubmitted} 
           />
-          c) Planets that orbit two suns
+          c) They are composed entirely of gas
           </label>
         </div>
         <p></p>
@@ -97,4 +97,4 @@ function Quizz2() {
   );
 }
 
-export default Quizz2
+export default Quizz4

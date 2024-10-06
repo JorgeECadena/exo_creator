@@ -60,3 +60,53 @@
   text-align: center;
   min-width: 500px;
 } 
+
+.pageB {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-image: url('fondo2.png');
+  color: black;
+  font-family: Comic sans-serif;
+}
+
+.cardB {
+  background-color: rgba(203, 203, 203, 0.9); 
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+}
+
+.NexButtontB {
+  margin-top: 20px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.page2B {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-image: url('fondo2.png');
+  color: black;
+  font-family: Comic sans-serif;
+}
+
+.card2B {
+  background-color: rgba(172, 169, 220, 0.9); 
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  min-width: 500px;
+} 

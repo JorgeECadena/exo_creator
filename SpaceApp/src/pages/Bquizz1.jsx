@@ -3,14 +3,14 @@ import React from 'react';
 import { useState } from 'react';
 import { useScore } from '../Score';
 
-function Quizz3() {
+function BQuizz1() {
     const navigate = useNavigate();
     const { score, incrementScore } = useScore();
     const [selectedAnswer, setSelectedAnswer] = useState('');
     const [isCorrect, setIsCorrect] = useState(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const correctAnswer = 'a';
+    const correctAnswer = 'b';
 
     const handleAnswerChange = (event) => {
         setSelectedAnswer(event.target.value);
@@ -28,18 +28,18 @@ function Quizz3() {
     
         setIsSubmitted(true); 
       };
-  
-    const handleNext = () => {
-        navigate('/quizz4');
+
+      const handleNext = () => {
+        navigate('/Bquizz2');
     };
 
   return (
-    <div className='page2'>
-      <div className="card2">
-      <h1>Question 3</h1>
+    <div className='page2B'>
+      <div className="card2B">
+      <h1>Question 1</h1>
       <p> <strong>
-      What defines a Neptunian exoplanet?
-              </strong>
+      What is one reason why finding exoplanets is difficult?
+        </strong>
       </p>
       
       <div>
@@ -51,7 +51,7 @@ function Quizz3() {
             onChange={handleAnswerChange}
             disabled={isSubmitted} 
           />
-          a) Planets with an atmosphere dominated by hydrogen and helium
+          a) Exoplanets are very large compared to stars.
           </label>
         </div>
         <div>
@@ -63,7 +63,7 @@ function Quizz3() {
             onChange={handleAnswerChange} 
             disabled={isSubmitted} 
           />
-          b) Planets made entirely of rock
+          b) Exoplanets are small, distant, and do not emit their own light.
           </label>
         </div>
         <div>
@@ -75,11 +75,10 @@ function Quizz3() {
             onChange={handleAnswerChange} 
             disabled={isSubmitted} 
           />
-          c) Planets smaller than Earth
+          c) Exoplanets can be easily seen from Earth with a telescope.
           </label>
         </div>
         <p></p>
-
         <button className="NextButton" onClick={handleSubmit} disabled={isSubmitted}>
           Submit
         </button>
@@ -90,11 +89,11 @@ function Quizz3() {
 
         <p>Your score: {score}</p>
 
-        <button className="NexButtont" onClick={handleNext}>Next</button>
+        <button className="NexButtontB" onClick={handleNext}>Next</button>
       </div>
     </div>
       
   );
 }
 
-export default Quizz3
+export default BQuizz1

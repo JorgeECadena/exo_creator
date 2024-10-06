@@ -7,7 +7,7 @@ function Lesson3() {
     const navigate = useNavigate();
   
     const handleNext = () => {
-        navigate('/lesson4');
+        navigate('/Alesson4');
     };
 
     return (

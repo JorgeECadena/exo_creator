@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useScore } from '../Score';
 
-function Quizz4() {
+function Quizz1() {
     const navigate = useNavigate();
     const { score, incrementScore } = useScore();
     const [selectedAnswer, setSelectedAnswer] = useState('');
@@ -28,17 +28,17 @@ function Quizz4() {
     
         setIsSubmitted(true); 
       };
-  
-    const handleNext = () => {
-        navigate('/quizz5');
+
+      const handleNext = () => {
+        navigate('/Aquizz2');
     };
 
   return (
     <div className='page2'>
       <div className="card2">
-      <h1>Question 4</h1>
+      <h1>Question 1</h1>
       <p> <strong>
-      What makes a super-Earth different from planets in our solar system?
+      What are exoplanets?
         </strong>
       </p>
       
@@ -51,7 +51,7 @@ function Quizz4() {
             onChange={handleAnswerChange}
             disabled={isSubmitted} 
           />
-          a) They are more massive than ice giants like Neptune
+          a) Planets within our solar system
           </label>
         </div>
         <div>
@@ -63,7 +63,7 @@ function Quizz4() {
             onChange={handleAnswerChange} 
             disabled={isSubmitted} 
           />
-          b) They are more massive than Earth but lighter than ice giants
+          b) Planets beyond our solar system
           </label>
         </div>
         <div>
@@ -75,7 +75,7 @@ function Quizz4() {
             onChange={handleAnswerChange} 
             disabled={isSubmitted} 
           />
-          c) They are composed entirely of gas
+          c) Planets smaller than Earth
           </label>
         </div>
         <p></p>
@@ -97,4 +97,4 @@ function Quizz4() {
   );
 }
 
-export default Quizz4
+export default Quizz1

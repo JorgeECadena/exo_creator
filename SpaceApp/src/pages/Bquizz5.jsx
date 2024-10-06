@@ -3,14 +3,14 @@ import React from 'react';
 import { useState } from 'react';
 import { useScore } from '../Score';
 
-function Quizz1() {
+function BQuizz5() {
     const navigate = useNavigate();
-    const { score, incrementScore } = useScore();
+    const { score, incrementScore, resetScore } = useScore();
     const [selectedAnswer, setSelectedAnswer] = useState('');
     const [isCorrect, setIsCorrect] = useState(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const correctAnswer = 'b';
+    const correctAnswer = 'a';
 
     const handleAnswerChange = (event) => {
         setSelectedAnswer(event.target.value);
@@ -28,18 +28,19 @@ function Quizz1() {
     
         setIsSubmitted(true); 
       };
-
-      const handleNext = () => {
-        navigate('/quizz2');
+  
+    const handleNext = () => {
+        resetScore();
+        navigate('/');
     };
 
   return (
-    <div className='page2'>
-      <div className="card2">
-      <h1>Question 1</h1>
+    <div className='page2B'>
+      <div className="card2B">
+      <h1>Question 5</h1>
       <p> <strong>
-      What are exoplanets?
-        </strong>
+      What happens when a star with a planet passes in front of a more distant star?
+      </strong>
       </p>
       
       <div>
@@ -51,7 +52,7 @@ function Quizz1() {
             onChange={handleAnswerChange}
             disabled={isSubmitted} 
           />
-          a) Planets within our solar system
+          a) The planet’s gravity creates an additional lensing effect, magnifying the distant star’s light.
           </label>
         </div>
         <div>
@@ -63,7 +64,7 @@ function Quizz1() {
             onChange={handleAnswerChange} 
             disabled={isSubmitted} 
           />
-          b) Planets beyond our solar system
+          b) The planet blocks all of the light from the distant star.
           </label>
         </div>
         <div>
@@ -75,7 +76,7 @@ function Quizz1() {
             onChange={handleAnswerChange} 
             disabled={isSubmitted} 
           />
-          c) Planets smaller than Earth
+          c) The planet makes the distant star appear to move closer to Earth.
           </label>
         </div>
         <p></p>
@@ -90,11 +91,11 @@ function Quizz1() {
 
         <p>Your score: {score}</p>
 
-        <button className="NexButtont" onClick={handleNext}>Next</button>
+        <button className="NexButtontB" onClick={handleNext}>Finish</button>
       </div>
     </div>
       
   );
 }
 
-export default Quizz1
+export default BQuizz5
