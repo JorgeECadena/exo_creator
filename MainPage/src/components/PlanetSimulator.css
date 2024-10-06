@@ -1,0 +1,37 @@
+body {
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Prevent scrolling on the body */
+    height: 100vh; /* Ensure body takes full viewport height */
+}
+
+
+.container {
+    display: flex; /* Use flexbox for layout */
+    height: 100%; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    position: relative; /* Position relative for child elements */
+}
+
+/* Style for the menu on the left */
+.menu {
+    width: 300px; /* Set a fixed width for the menu */
+    background-color: #333; /* Background color for the menu */
+    color: white; /* Text color */
+    padding: 20px; /* Padding inside the menu */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+}
+
+/* Style for the simulator container */
+.simulator-container {
+    flex-grow: 1; /* Allow the simulator to take up the remaining space */
+    height: 100vh; /* Set to 100vh to fill the remaining height */
+    width: 100%; /* Ensure full width */
+    position: relative; /* Position relative for child elements */
+    background-color: black; /* Optional background for the simulator */
+    overflow: hidden; /* Hide overflow if necessary */
+}
+
+.canvas {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+}

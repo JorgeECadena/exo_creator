@@ -1,0 +1,23 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  position: relative; /* Ensure .App is the reference point */
+  min-height: 100vh;
+  background-color: white; 
+}
+
+.App h1 {
+  position: absolute;
+  top: 20px; /* Adjust this as needed */
+  left: 50%; /* Center the header */
+  transform: translateX(-15%); /* Center adjustment */
+  margin: 0; /* Remove margin */
+  font-size: 48px; 
+  line-height: 1.2; 
+  z-index: 10; /* Increase the z-index */
+  color: black; 
+  background-color: white; /* Add a background color */
+  padding: 10px; /* Optional padding for better visibility */
+}
