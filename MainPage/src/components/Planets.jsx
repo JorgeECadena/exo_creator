@@ -64,20 +64,20 @@ const Planet = ({ texturePath, cloudPath, position, temperature, cloudOpacity, p
         <sphereGeometry args={[planetSize * 1.05, 32, 32]} />
         <shaderMaterial attach="material" args={[fresnelMaterial]} />
       </mesh>
-      <group position={[0, planetSize * 1.1, 0]}>
-        <Plane args={[2, 0.5]} position={[0, 0.6, -0.01]}>
-          <meshBasicMaterial attach="material" color="black" side={THREE.DoubleSide} />
-        </Plane>
-        <Text
-          position={[0, planetSize * 1.2, 0]}
-          fontSize={0.2}
-          color="white"
-          anchorX="center"
-          anchorY="middle"
-        >
-          {name}
-        </Text>
-      </group>
+      <group position={[0, planetSize * 1.5, 0]}>
+      <Plane args={[2, 0.5]} position={[0, 0, 0]}>
+        <meshBasicMaterial attach="material" color="black" side={THREE.DoubleSide} />
+      </Plane>
+      <Text
+        position={[0, 0, 0.01]} // Slightly in front of the plane to avoid z-fighting
+        fontSize={0.2}
+        color="white"
+        anchorX="center"
+        anchorY="middle"
+      >
+        {name}
+      </Text>
+    </group>
     </group>
   );
 };
