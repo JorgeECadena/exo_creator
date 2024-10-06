@@ -1,15 +1,6 @@
+# Descripción: Este archivo contiene la función que calcula la similitud entre la entrada del usuario y los exoplanetas en la base de datos.
 import pandas as pd
 from scipy.spatial.distance import euclidean
-
-df = pd.read_csv('data.csv')
-
-planeta = input('Ingrese el nombre del planeta: ')
-distancia = float(input('Ingrese la distancia del planeta a su estrella (en AU): '))
-masa_sol = float(input('Ingrese la masa de la estrella (en Soles): '))
-temperatura = float(input('Ingrese la temperatura de equilibrio del planeta (en °C): '))
-masa_planeta = float(input('Ingrese la masa del planeta (en Tierras): '))
-radio_planeta = float(input('Ingrese el radio del planeta (en Tierras): '))
-values = [radio_planeta, masa_planeta, temperatura, masa_sol, distancia]
 
 def similarity(df, values):
     # if column not num -> fill with 0
@@ -23,10 +14,3 @@ def similarity(df, values):
     exoplanet = df.iloc[mostCompatible]
     return exoplanet
 
-compatible_planet = similarity(df, values)
-
-print(compatible_planet['pl_name'])
-print(compatible_planet)
-#df['pl_orbsmax'] distancias de los planetas a su estrella
-#df['st_mass'] masa de la estrella
-#df['pl_eqt'] temperatura de equilibrio del planeta
