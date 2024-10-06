@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './SignIn.css';
-import background from './assets/background1.jpg'; 
-import logo from './assets/logo.png'; 
+import './App.css';
+import background from './assets/background1.jpg'; // Fondo del universo
+import logo from './assets/logo.png';
 
 function SignIn() {
     const [username, setUsername] = useState('');
@@ -18,16 +18,17 @@ function SignIn() {
                 height: '100vh',
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center',
+                alignItems: 'center'
             }}
         >
             <div className="logo-container">
                 <img src={logo} alt="App Logo" className="app-logo" />
             </div>
 
+            {/* Tarjeta de sign-in */}
             <div className="sign-in-card">
+                <h2>Sign In</h2>
                 <form className='SignIn'>
-                    <h1>Login</h1>
                     <label>
                         Username:
                         <input
@@ -48,10 +49,7 @@ function SignIn() {
                             required
                         />
                     </label>
-
                     <button type="submit">Sign In</button>
-
-                    <a href="/SignUp">New here? Create an acount.</a>
                 </form>
             </div>
         </div>

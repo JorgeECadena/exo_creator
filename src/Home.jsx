@@ -9,6 +9,10 @@ const Home = () => {
   const goToSignUp = () => {
     navigate('/SignUp');
   };
+
+  const goToSignIn = () => {
+    navigate('/SignIn');
+  };
   
   return (
     <div className="container">
@@ -18,7 +22,7 @@ const Home = () => {
           <button className="transparent-button">Create you EXO</button>
           <button className="transparent-button">Lessons</button>
 
-          <button className="button1">SignIn</button>
+          <button onClick={() => goToSignIn()} className="button1">SignIn</button>
           <button onClick={() => goToSignUp()} className="button2">SignUp</button>
         </div>
       </header>
