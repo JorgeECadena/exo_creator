@@ -20,6 +20,9 @@ body {
     color: white; /* Text color */
     padding: 20px; /* Padding inside the menu */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
 }
 
 /* Style for the simulator container */
@@ -48,4 +51,17 @@ body {
     top: 0; /* Align to the top */
     height: 100vh; /* Full viewport height */
     z-index: 10; /* Ensure it is above the canvas */
+    text-align: right;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.TextInputs h {
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    padding: 10px;
+    text-align: right;
 }
