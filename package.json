@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.114.0",
+    "@react-three/fiber": "^8.17.9",
     "aws-amplify": "^6.6.4",
     "aws-amplify-react": "^5.1.43",
     "axios": "^1.7.7",

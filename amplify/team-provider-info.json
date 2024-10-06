@@ -25,12 +25,17 @@
         },
         "apifunc": {
           "deploymentBucketName": "amplify-exocreator-dev-ce607-deployment",
-          "s3Key": "amplify-builds/apifunc-5a334179754d326e7968-build.zip"
+          "s3Key": "amplify-builds/apifunc-51556675394a66316a51-build.zip"
+        },
+        "getExoInfo": {
+          "deploymentBucketName": "amplify-exocreator-dev-ce607-deployment",
+          "s3Key": "amplify-builds/getExoInfo-79516c77516a4e745153-build.zip"
         }
       },
       "api": {
         "nodeApi": {},
-        "api": {}
+        "api": {},
+        "getPlanetInfo": {}
       }
     }
   }

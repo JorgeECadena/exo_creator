@@ -14,6 +14,20 @@
       "providerPlugin": "awscloudformation",
       "service": "API Gateway"
     },
+    "getPlanetInfo": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getExoInfo"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "nodeApi": {
       "dependsOn": [
         {
@@ -31,6 +45,11 @@
   },
   "function": {
     "apifunc": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getExoInfo": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -55,6 +74,22 @@
         {
           "category": "function",
           "resourceName": "apifunc"
+        }
+      ]
+    },
+    "AMPLIFY_function_getExoInfo_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getExoInfo"
+        }
+      ]
+    },
+    "AMPLIFY_function_getExoInfo_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getExoInfo"
         }
       ]
     },

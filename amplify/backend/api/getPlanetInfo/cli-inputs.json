@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/exo/info/{data}": {
+      "name": "/exo/info/{data}",
+      "lambdaFunction": "getExoInfo",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

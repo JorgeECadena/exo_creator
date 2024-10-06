@@ -1,7 +1,7 @@
 // /src/components/Home.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './App.css'; // Import the CSS file
+import './Home.css'; // Import the CSS file
 
 const Home = () => {
   const navigate = useNavigate();
@@ -13,13 +13,17 @@ const Home = () => {
   const goToSignUp = () => {
     navigate('/SignUp');
   };
+
+  const goToExoPlanet = () => {
+    navigate('/Exo-Planet');
+  };
   
   return (
     <div className="container">
       <header className="header">
         <h1>ExoCreator</h1>
         <div>
-          <button className="transparent-button">Create you EXO</button>
+          <button onClick={() => goToExoPlanet()} className="transparent-button">Create you EXO</button>
           <button className="transparent-button">Lessons</button>
 
           <button onClick={() => goToSignIn()} className="button1">SignIn</button>

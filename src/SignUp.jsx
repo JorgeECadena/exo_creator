@@ -19,13 +19,34 @@ const SignUp = () => {
         navigate('/');
     };
 
-    const submitForm = (e) => {
+    const submitForm = async (e) => {
         e.preventDefault();
 
         if(password !== passwordConfirmation) {
             alert("Passwords do not match!");
             return;
         }
+
+        try {
+            const response = await fetch('https://btfccxhaig.execute-api.us-east-2.amazonaws.com/dev/barbo/userData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify({
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: password,
+            }),
+        });
+        const data = await response.json();
+        console.log(data);
+       } catch (error) {
+           console.error('Error on POST:', error);
+       } 
+
     };
 
     return (
